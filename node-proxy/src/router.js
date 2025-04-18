@@ -188,8 +188,8 @@ router.all('/encryptFile', async (ctx, next) => {
     return
   }
   const files = searchFile(folderPath)
-  if (files.length > 10000) {
-    ctx.body = { msg: 'too maney file, exceeding 10000', code: 500 }
+  if (files.length > 1000000) {
+    ctx.body = { msg: 'too many file, exceeding 1000000', code: 500 }
     return
   }
   encryptFile(password, encType, operation, folderPath, outPath, encName)
